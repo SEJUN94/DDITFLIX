@@ -1,0 +1,27 @@
+package kr.or.ddit.admin.membership.vo;
+
+public class AdminMembershipVO {
+	private String membershipId;
+	private String membershipName;
+	private String createDt;
+	
+	public String getMembershipId() {
+		return membershipId;
+	}
+	public void setMembershipId(String membershipId) {
+		this.membershipId = membershipId;
+	}
+	public String getMembershipName() {
+		return membershipName;
+	}
+	public void setMembershipName(String membershipName) {
+		this.membershipName = membershipName;
+	}
+	public String getCreateDt() {
+		return createDt;
+	}
+	public void setCreateDt(String createDt) {
+		this.createDt = createDt;
+	}
+		
+}

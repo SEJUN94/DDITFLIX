@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+			PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+			"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="adminMembership">
+
+<resultMap id="membershipMap" class="adminMembershipVO">
+	<result property="membershipId" column="CARD_CMPN_ID"/>
+	<result property="membershipName" column="CARD_CMPN_NAME"/>
+	<result property="createDt" column="CREATE_DT"/>
+</resultMap>
+
+
+<select id="getMembershipAll" resultMap="membershipMap">
+	select * from affiliate_card_company
+	order by create_dt desc
+</select>
+
+<select id="getMembership" parameterClass="String" resultMap="membershipMap">
+	select * from affiliate_card_company where card_cmpn_id=#cardCmpId# 
+</select>
+
+<update id="insertMembership" parameterClass="adminMembershipVO">
+	insert into affiliate_card_company
+	values
+	(
+		AFFILIATE_CARD_CMPN_SEQ.NEXTVAL
+		, #membershipName#
+		, sysdate
+	)
+
+</update>
+
+<update id="updateMembership" parameterClass="adminMembershipVO">
+	update affiliate_card_company
+	set
+	card_cmpn_name = #membershipName#
+	where card_cmpn_id=#membershipId# 
+</update>
+
+<update id="deleteMembershipn" parameterClass="String">
+	delete from affiliate_card_company
+	where card_cmpn_id=#membershipId# 
+</update>
+
+</sqlMap>

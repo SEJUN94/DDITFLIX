@@ -1,0 +1,5 @@
+Console.highWaterMark=808000
+Console.lowWaterMark=800000
+eclipse.preferences.version=1
+org.eclipse.debug.ui.LaunchLastIfNotLaunchable=false
+org.eclipse.debug.ui.LaunchParentProject=true
